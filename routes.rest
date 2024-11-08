@@ -1,0 +1,15 @@
+//Testing
+### Get All users
+GET http://localhost:3000/users
+
+### Get users by id
+GET http://localhost:3000/users/672d6f09e12acfb67368f889
+
+
+//Production
+### Get All users
+GET https://cse-341-project1-irj7.onrender.com/users
+
+### Get users by id
+GET https://cse-341-project1-irj7.onrender.com/users/672d6f09e12acfb67368f889
+
