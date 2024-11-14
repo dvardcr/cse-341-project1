@@ -40,3 +40,29 @@ GET https://cse-341-project1-irj7.onrender.com/users
 ### Get users by id
 GET https://cse-341-project1-irj7.onrender.com/users/672d6f09e12acfb67368f889
 
+### Add new user
+POST https://cse-341-project1-irj7.onrender.com/users HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe@email.com",
+    "favoriteColor": "Black",
+    "birthday": "1990-12-01"
+}
+
+### Update user
+PUT https://cse-341-project1-irj7.onrender.com/users/672d6f09e12acfb67368f889 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Samuel",
+    "lastName": "Vargas",
+    "email": "newsam@email.com",
+    "favoriteColor": "Yellow",
+    "birthday": "2011-10-01"
+}
+
+### Delete user
+DELETE https://cse-341-project1-irj7.onrender.com/users/6732793b260343f348d778eb
