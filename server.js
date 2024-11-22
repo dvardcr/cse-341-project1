@@ -19,6 +19,15 @@ app.use((req, res, next) => {
 
 app.use('/', require('./routes'));
 
+// Week 3 - Adding Error Handling Code from nodejs.org
+process.on('uncaughtException', (err, origin) => {
+    console.log(
+        process.stderr.fd,
+        `Caught exception: ${err}\n` +
+        `Exception origin: ${origin}\n`,
+    );
+});
+
 mongodb.initDb((err) => {
     if(err) {
         console.log(err);

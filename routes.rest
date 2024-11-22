@@ -29,8 +29,8 @@ content-type: application/json
     "birthday": "2011-10-01"
 }
 
-### Delete user
-DELETE http://localhost:3000/users/6732793b260343f348d778eb
+### Delete user (update user id)
+DELETE http://localhost:3000/users/673d05e3298e9e430ba81885
 
 
 //Production
@@ -64,5 +64,5 @@ content-type: application/json
     "birthday": "2011-10-01"
 }
 
-### Delete user
+### Delete user (update user id)
 DELETE https://cse-341-project1-irj7.onrender.com/users/6732793b260343f348d778eb

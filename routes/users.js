@@ -1,19 +1,35 @@
+// routes/users.js
 const express = require('express');
 const router = express.Router();
 
+// Import the controller and validation middleware
 const usersController = require('../controllers/users');
+const { validateUserCreation, validateUserUpdate } = require('../middleware/validation');
+const { validationResult } = require('express-validator');
 
-//Get All
+// Get All users
 router.get('/', usersController.getAll);
 
-//Get Single by Id
+// Get Single user by Id
 router.get('/:id', usersController.getSingle);
 
 // Add new user
-router.post('/', usersController.createUser);
+router.post('/', validateUserCreation, (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    next();
+}, usersController.createUser);
 
 // Modify user
-router.put('/:id', usersController.updateUser);
+router.put('/:id', validateUserUpdate, (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    next();
+}, usersController.updateUser);
 
 // Remove user
 router.delete('/:id', usersController.deleteUser);
